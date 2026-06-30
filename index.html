@@ -610,6 +610,9 @@ div#storesContainer {
 	position: absolute;
 	top: 0px;
 	right: 0px;
+	max-height: 100%;      /* 限制高度不超过父容器 */
+	overflow-y: auto;       /* 超出时显示垂直滚动条 */
+	scrollbar-width: thin;  /* 滚动条更细，不占太多空间 */
 }
 
 div#stores {
