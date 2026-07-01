@@ -13520,5 +13520,54 @@ Events.Setpieces = {
 		var oldIE = false;
 	</script>
 	<!-- Engine.init() is already called at the end of engine.js -->
+	
+<script>
+(function() {
+    function checkStoresOverflow() {
+        var storesContainer = document.getElementById('storesContainer');
+        var wrapper = document.getElementById('wrapper');
+        var content = document.getElementById('content');
+        if (!storesContainer || !wrapper || !content) return;
+        var storesRect = storesContainer.getBoundingClientRect();
+        var viewportHeight = window.innerHeight;
+        var storesBottom = storesRect.bottom;
+        var isOverflowing = storesBottom > viewportHeight;
+        var contentOverflow = content.scrollHeight > content.clientHeight;
+        if (isOverflowing || contentOverflow) {
+            document.documentElement.style.height = 'auto';
+            document.body.style.height = 'auto';
+            document.body.style.overflowY = 'auto';
+            content.style.overflow = 'visible';
+            content.style.height = 'auto';
+            wrapper.style.overflow = 'visible';
+        } else {
+            document.documentElement.style.height = '';
+            document.body.style.height = '';
+            document.body.style.overflowY = '';
+            content.style.overflow = '';
+            content.style.height = '';
+            wrapper.style.overflow = '';
+        }
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', checkStoresOverflow);
+    } else {
+        checkStoresOverflow();
+    }
+    window.addEventListener('resize', checkStoresOverflow);
+    var storesContainer = document.getElementById('storesContainer');
+    if (storesContainer && window.MutationObserver) {
+        var observer = new MutationObserver(function() {
+            setTimeout(checkStoresOverflow, 100);
+        });
+        observer.observe(storesContainer, {
+            childList: true,
+            subtree: true,
+            characterData: true
+        });
+    }
+    setInterval(checkStoresOverflow, 2000);
+})();
+</script>
 </body>
 </html>
