@@ -2137,7 +2137,7 @@ _.setTranslation({
     "a shot rings out, from somewhere in the long grass": "深草丛的某处射出了一发子弹",
     "a wall of gnarled trees rises from the dust. their branches twist into a skeletal canopy overhead.": "粗大的树干从贫地中崛起, 形成坚实的树墙, 他们的巨大枝杈扭曲在一起, 仿佛苍穹一般.",
     "learned to predict their movement": "提高了命中率",
-    "with a little effort, it might fly again.": "修整修整后飛船应该还能飞.",
+    "with a little effort, it might fly again.": "修整后飛船应该还能飞.",
     "A Scavenger": "一个拾荒者",
     "a wanderer arrives with an empty cart. says if he leaves with wood, he'll be back with more.": "一名流浪者推着货车来到村子，声称如果让他带着木头离开，他会带回更多木头.",
     "picking the bones finds some useful trinkets.": "骨头捡起来之后发现了一些小东西.",
@@ -2180,21 +2180,20 @@ _.setTranslation({
     "worth killing for, it seems.": "这回似乎赚了.",
     "the stranger in the corner stops shivering. her breathing calms.": "角落里的陌生人不再颤抖了，她的呼吸平静了下来.",
     "a small suburb lays ahead, empty houses scorched and peeling.": "前面是一小片住宅区，空无一人，只有烧焦的残垣断壁.",
-    "gaunt man": "落魄的人",// i think mimi agent stop in here
-    "the small military outpost is well supplied.": "小型军事哨站补给充分.",
-    "the villagers retreat to mourn the dead.": "村名们放弃了追击, 集体悼念了死去的人.",
-    "there's not much, but some useful things can still be found.": "还能找到一些有用的东西, 虽然不多.",
+    "gaunt man": "憔悴的男子",
+    "the small military outpost is well supplied.": "这个小小的军事哨所供应充足.",
+    "the villagers retreat to mourn the dead.": "村民撤了回来，悼念那些死去的人.",
+    "there's not much, but some useful things can still be found.": "不是很多，但仍然能找到一些有用的.",
     " and ": "和",
-    "an improvised shop is set up on the sidewalk.": "一个简易车间被安置在路边.",
+    "an improvised shop is set up on the sidewalk.": "街道上有个临时商店.",
     "cured meat": "腊肉",
-    "builder puts up a hut, out in the forest. says word will get around.": "建造者在森林里搭起一座木屋",
+    "builder puts up a hut, out in the forest. says word will get around.": "建造者在林中建起一栋小屋，她说消息很快就会流传出去.",
     "learned how not to be seen": "降低遇敌概率",
     "punches do more damage": "提高徒手攻击力",
-    "only dust and stains remain.": "只有污浊的尘土依旧.",
-    "well armed men charge out of the forest, firing into the crowd.": "武装精良的士兵冲突森林, 向我们的人开火.",
-    "deep in the swamp is a moss-covered cabin.": "沼泽深处有一个覆满苔藓的小屋.",
-    "app store.": "app store",
-    "An Old Starship": "古老的飞船",
+    "only dust and stains remain.": "只留下尘土和污渍.",
+    "well armed men charge out of the forest, firing into the crowd.": "装备精良的人冲出树林，向人群射击.",
+    "deep in the swamp is a moss-covered cabin.": "沼泽深处现出一栋覆满苔藓的小屋",
+    "An Old Starship": "古老的飞船",// stop here
     "ignore it": "不理他",
     "hot": "很热",
     "upgrade engine": "升级引擎",
@@ -3011,26 +3010,12 @@ var Button = {
 				.text(_('restart.'))
 				.click(Engine.confirmDelete)
 				.appendTo(menu);
-			
-// 			$('<span>')
-// 				.addClass('menuBtn')
-// 				.text(_('share.'))
-// 				.click(Engine.share)
-// 				.appendTo(menu);
 	      
 			$('<span>')
 				.addClass('menuBtn')
 				.text(_('save.'))
 				.click(Engine.exportImport)
 				.appendTo(menu);
-				
-// 			$('<span>')
-// 				.addClass('menuBtn')
-// 				.text(_('app store.'))
-// 				.click(function() { window.open('[app-store-url-removed]'); })
-// 				.appendTo(menu);
-				
-			
 			
 			// Register keypress handlers
 			$('body').off('keydown').keydown(Engine.keyDown);
