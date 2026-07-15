@@ -6003,7 +6003,7 @@ var Room = {
 						text: _(k),
 						click: Room.build,
 						width: '80px',
-						ttPos: loc.children().length > 10 ? 'top right' : 'bottom right'
+						ttPos: 'bottom right'
 					}).css('opacity', 0).attr('buildThing', k).appendTo(loc).animate({opacity: 1}, 300, 'linear');
 				}
 			} else {
